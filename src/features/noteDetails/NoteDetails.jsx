@@ -14,7 +14,7 @@ function NoteDetails() {
 
     const handleDelete = () => {
         dispatch(deleteNote(notes[id]?.id));
-        navigate('/todo/');
+        navigate('/Todo-app/');
     }
 
 

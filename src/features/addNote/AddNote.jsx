@@ -18,7 +18,7 @@ function AddNote() {
 
     const handleAdd = () => {
         dispatch(addNote({note}));
-        navigate('/todo/');
+        navigate('/Todo-app/');
     }
 
     return (

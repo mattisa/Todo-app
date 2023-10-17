@@ -16,13 +16,13 @@ function App() {
             <Routes>
 
                 {/* Board */}
-                <Route path='/todo/' element={ <Board/> }/>
+                <Route path='/Todo-app/' element={ <Board/> }/>
 
                 {/* Add Note */}
-                <Route path='/todo/add/' element={ <AddNote/> }/>
+                <Route path='/Todo-app/add/' element={ <AddNote/> }/>
 
                 {/* Note Details */}
-                <Route path='/todo/:id' element={ <NoteDetails/> }/>
+                <Route path='/Todo-app/:id' element={ <NoteDetails/> }/>
 
 
             </Routes>
