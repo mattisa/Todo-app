@@ -16,14 +16,14 @@ function Board() {
             {
                 notes.map((note,idx) => {
                     if(note.id !== 0){
-                        return <div className={style.card} key={note.id} onClick={() => navigate(`/todo/${idx}`)}>
+                        return <div className={style.card} key={note.id} onClick={() => navigate(`/Todo-app/${idx}`)}>
                             <Card 
                                 title={note?.title} 
                                 description={note?.desc}
                             />
                         </div>
                     }
-                    return <div className={style.card} key={note.id} onClick={() => navigate(`/todo/add`)}>
+                    return <div className={style.card} key={note.id} onClick={() => navigate(`/Todo-app/add`)}>
                         <AddCard/>
                     </div>
                 })
