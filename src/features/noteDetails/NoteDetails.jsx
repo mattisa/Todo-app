@@ -9,7 +9,7 @@ function NoteDetails() {
 
     const { id } = useParams();
     const navigate = useNavigate();
-    const notes = useSelector((state) => state.board);
+    const notes = useSelector((state) => state.board.notes);
     const dispatch = useDispatch();
 
     const handleDelete = () => {
