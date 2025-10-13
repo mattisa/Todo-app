@@ -7,24 +7,30 @@ import { createSlice } from '@reduxjs/toolkit';
  *  5 - add the reducer to store
 */
 
-const initialState = [
-    {
-        id: 0,
-    },
-];
+const initialState = {
+    notes: [
+        {
+            id: 0,
+        },
+    ],
+    viewMode: 'grid' // 'grid' or 'list'
+};
 
 const boardSlice = createSlice({
     name: 'board',
     initialState,
     reducers: {
-        addNote: (state , action) => {
-            state.unshift(action.payload.note);
+        addNote: (state, action) => {
+            state.notes.unshift(action.payload.note);
         },
-        deleteNote: (state , action) => {
-            state.splice(state.findIndex((arrow) => arrow.id === action.payload), 1);
+        deleteNote: (state, action) => {
+            state.notes.splice(state.notes.findIndex((arrow) => arrow.id === action.payload), 1);
+        },
+        setViewMode: (state, action) => {
+            state.viewMode = action.payload;
         }
     }
 });
 
 export default boardSlice.reducer;
-export const {addNote , deleteNote} = boardSlice.actions;
+export const { addNote, deleteNote, setViewMode } = boardSlice.actions;

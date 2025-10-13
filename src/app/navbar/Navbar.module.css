@@ -4,21 +4,67 @@
     background-color: #393053;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: white;
     box-shadow: 0 2px 15px rgb(0 0 0 /10%);
+    padding: 0 30px;
 }
 
-.navbar > div{
-    padding-left: 30px;
+.logoSection{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 30px;
-
 }
 
-.navbar > div > h1{
+.logoSection > h1{
     font-size: 30px;
     padding: 0;
     margin: 0;
+}
+
+.viewToggle {
+    display: flex;
+    gap: 10px;
+}
+
+.viewButton {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.viewButton.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #4CAF50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logoSection {
+        gap: 15px;
+    }
+
+    .logoSection h1 {
+        font-size: 24px;
+    }
+
+    .viewButton {
+        padding: 8px 12px;
+    }
 }
