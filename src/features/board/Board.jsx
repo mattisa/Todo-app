@@ -9,7 +9,7 @@ import AddCard from '../components/addCard/AddCard';
 function Board() {
 
     const navigate = useNavigate();
-    const notes = useSelector((state) => state.board);
+    const notes = useSelector((state) => state.board.notes);
 
     return (
         <div className={style.board}>
@@ -17,8 +17,8 @@ function Board() {
                 notes.map((note,idx) => {
                     if(note.id !== 0){
                         return <div className={style.card} key={note.id} onClick={() => navigate(`/Todo-app/${idx}`)}>
-                            <Card 
-                                title={note?.title} 
+                            <Card
+                                title={note?.title}
                                 description={note?.desc}
                             />
                         </div>
