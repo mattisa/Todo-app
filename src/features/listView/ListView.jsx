@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteNote } from '../board/boardSlice';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
 import style from './ListView.module.css';
 import { MdDelete } from 'react-icons/md';
 
@@ -23,7 +24,7 @@ function ListView() {
                 <h2>All Tasks</h2>
                 <button
                     className={style.addButton}
-                    onClick={() => navigate('/Todo-app/add')}
+                    onClick={() => navigate(ROUTES.ADD_NOTE)}
                 >
                     + Add New Task
                 </button>
@@ -39,7 +40,7 @@ function ListView() {
                         <div
                             key={note.id}
                             className={style.listItem}
-                            onClick={() => navigate(`/Todo-app/${idx + 1}`)}
+                            onClick={() => navigate(ROUTES.NOTE_DETAILS(idx + 1))}
                         >
                             <div className={style.taskContent}>
                                 <h3 className={style.taskTitle}>{note.title}</h3>

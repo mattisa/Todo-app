@@ -5,6 +5,7 @@ import Board from '../features/board/Board';
 import ListView from '../features/listView/ListView';
 import NoteDetails from '../features/noteDetails/NoteDetails';
 import AddNote from '../features/addNote/AddNote';
+import { ROUTES } from '../constants/routes';
 import style from './App.module.css';
 
 
@@ -17,13 +18,13 @@ function App() {
             <Routes>
 
                 {/* Board - Grid View */}
-                <Route path='/Todo-app/' element={ <Board/> }/>
+                <Route path={ROUTES.HOME} element={ <Board/> }/>
 
                 {/* List View */}
-                <Route path='/Todo-app/list' element={ <ListView/> }/>
+                <Route path={ROUTES.LIST_VIEW} element={ <ListView/> }/>
 
                 {/* Add Note */}
-                <Route path='/Todo-app/add/' element={ <AddNote/> }/>
+                <Route path={ROUTES.ADD_NOTE} element={ <AddNote/> }/>
 
                 {/* Note Details */}
                 <Route path='/Todo-app/:id' element={ <NoteDetails/> }/>

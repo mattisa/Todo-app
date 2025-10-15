@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector , useDispatch } from 'react-redux';
 import { deleteNote } from '../board/boardSlice';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
 import style from './NoteDetails.module.css';
 
 function NoteDetails() {
@@ -14,7 +15,7 @@ function NoteDetails() {
 
     const handleDelete = () => {
         dispatch(deleteNote(notes[id]?.id));
-        navigate('/Todo-app/');
+        navigate(ROUTES.HOME);
     }
 
 

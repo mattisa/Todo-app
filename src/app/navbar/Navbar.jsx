@@ -3,14 +3,15 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { LuListTodo } from "react-icons/lu";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { FaList } from "react-icons/fa";
+import { ROUTES } from '../../constants/routes';
 import style from './Navbar.module.css'
 
 function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isListView = location.pathname === '/Todo-app/list';
-    const isGridView = location.pathname === '/Todo-app/' || location.pathname === '/Todo-app';
+    const isListView = location.pathname === ROUTES.LIST_VIEW;
+    const isGridView = location.pathname === ROUTES.HOME || location.pathname === '/Todo-app';
 
     return (
         <div className={style.navbar}>
@@ -21,14 +22,14 @@ function Navbar() {
             <div className={style.viewToggle}>
                 <button
                     className={`${style.viewButton} ${isGridView ? style.active : ''}`}
-                    onClick={() => navigate('/Todo-app/')}
+                    onClick={() => navigate(ROUTES.HOME)}
                     title="Grid View"
                 >
                     <BsGrid3X3Gap size="24px" />
                 </button>
                 <button
                     className={`${style.viewButton} ${isListView ? style.active : ''}`}
-                    onClick={() => navigate('/Todo-app/list')}
+                    onClick={() => navigate(ROUTES.LIST_VIEW)}
                     title="List View"
                 >
                     <FaList size="24px" />
