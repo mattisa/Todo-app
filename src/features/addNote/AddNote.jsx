@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import { addNote } from '../board/boardSlice';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
 import style from './AddNote.module.css';
 
 function AddNote() {
@@ -18,7 +19,7 @@ function AddNote() {
 
     const handleAdd = () => {
         dispatch(addNote({note}));
-        navigate('/Todo-app/');
+        navigate(ROUTES.HOME);
     }
 
     return (
